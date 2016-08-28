@@ -1,4 +1,4 @@
-package com.importnew;
+package main.java.hello;
 
 public class HelloWorld {
 	private String msg;

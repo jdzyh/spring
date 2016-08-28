@@ -1,4 +1,4 @@
-package com.importnew;
+package main.java.hello;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
