@@ -1,0 +1,21 @@
+task upper << {
+    String someString = 'mY_nAmE'
+    println "Original: " + someString
+    println "Upper case: " + someString.toUpperCase()
+}
+
+
+4.times { counter ->
+    task "Task$counter" << {
+        println "I'm task number $counter"
+    }
+}
+Task0.dependsOn Task2, Task3
+
+task myTask {
+    ext.myProp = 'test prop.'
+}
+
+task printMyProp {
+    println myTask.myProp
+}

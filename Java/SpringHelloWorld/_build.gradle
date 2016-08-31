@@ -1,0 +1,24 @@
+apply plugin: 'java'
+//打包成可执行文件
+apply plugin: 'application'
+mainClassName='main.java.helloworld.MainEnter'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'org.springframework:spring-context:4.3.2.RELEASE'
+    runtime files('configs')
+}
+jar {
+    baseName = 'Hello-gradle'
+    version =  '0.2.0'
+    
+    manifest {
+       //attributes 'Main-Class': 'main.java.helloworld.MainEnter'
+       //attributes 'Main-Class': 'main.java.hello.Application'
+    }
+    
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.0'
+}

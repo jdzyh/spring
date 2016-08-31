@@ -1,3 +1,33 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
 dependencies {
     compile 'org.springframework:spring-context:4.3.2.RELEASE'
+}
+
+task copyJars(type : Copy){
+	from configurations.runtime
+	into 'build/libs/lib'
+}
+
+task copyConfigs(type :Copy){
+	from 'configs/'
+	into 'build/libs/configs'
+}
+
+task generateJar(type : Jar, dependsOn : [copyJars, copyConfigs, jar]) {
+    manifest {
+        attributes (
+        	'Main-Class':'main.java.hello.Application',
+        	'Class-Path':configurations.compile.collect{'lib/'+it.getName()}.join(' ')
+        )
+    }
+    into(''){
+    	from "$buildDir/classes/main"
+    }
+    into(''){
+    	from "$projectDir/src/main/resources"
+    }
 }
