@@ -1,4 +1,4 @@
-package main.java.testframework.beans;
+package main.java.testframework.serviceLocatorBeans;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

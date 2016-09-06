@@ -1,4 +1,4 @@
-package main.java.testframework.beans;
+package main.java.testframework.serviceLocatorBeans;
 
 public class UserInfo {
 	private String userName;

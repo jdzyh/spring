@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: lib/spring-context-4.3.2.RELEASE.jar lib/spring-aop-4.3.2.
+ RELEASE.jar lib/spring-beans-4.3.2.RELEASE.jar lib/spring-core-4.3.2.
+ RELEASE.jar lib/spring-expression-4.3.2.RELEASE.jar lib/commons-loggi
+ ng-1.2.jar
+Main-Class: main.java.helloworld.MainEnter
+

@@ -1,6 +1,6 @@
-package main.java.testframework.beans;
+package main.java.testframework.serviceLocatorBeans;
 
-import main.java.testframework.beans.ClientService;
+import main.java.testframework.serviceLocatorBeans.ClientService;
 
 public class DefaultServiceLocator {
 	private ClientService clientService;
