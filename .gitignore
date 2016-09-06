@@ -1,0 +1,3 @@
+# Reject .class and /build files
+*.class
+build/

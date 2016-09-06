@@ -3,7 +3,31 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="hello" class="main.java.helloworld.HelloWorld">
-		<property name="msg" value="Nice to meet you !"/>
+	
+	<bean id="hello" class="main.java.testframework.beans.HelloWorld">
+		<property name="msg" value="Default msg."/>
 	</bean>
+	
+	<bean id="userinfo" class="main.java.testframework.beans.UserInfo">
+		<property name="userName" value="Default name."/>
+		<property name="userID" value="Default ID."/>
+		<property name="userDesc" value="Default describe."/>
+		<property name="helloworld" ref="hello"/>
+	</bean>
+	
+	
+	<!-- the factory bean, which contains a method createClientServiceInstance-->
+	<bean id="serviceLocator" class="main.java.testframework.beans.DefaultServiceLocator">
+		<constructor-arg ref="defaultClientService"/>
+	</bean>
+
+	<!-- the bean to be created via the factory bean -->
+	<bean id="clientService"
+	    factory-bean="serviceLocator"
+	    factory-method="createClientServiceInstance"/>
+	<bean id="defaultClientService" class="main.java.testframework.beans.ClientService">
+		<constructor-arg index="0" value="LaLaLa..."/>
+		<constructor-arg index="1" type="int" value="999"/>
+	</bean>
+	    
 </beans>

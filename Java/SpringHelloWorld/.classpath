@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="C:/Users/dtzyh/Downloads/spring/spring-framework-4.3.2.RELEASE-dist/spring-framework-4.3.2.RELEASE/libs/spring-core-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dtzyh/Downloads/spring/spring-framework-4.3.2.RELEASE-dist/spring-framework-4.3.2.RELEASE/libs/spring-expression-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_72/lib/missioncontrol/plugins/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dtzyh/Downloads/spring/spring-framework-4.3.2.RELEASE-dist/spring-framework-4.3.2.RELEASE/libs/spring-web-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

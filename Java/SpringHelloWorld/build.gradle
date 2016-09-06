@@ -20,14 +20,16 @@ task copyConfigs(type :Copy){
 task generateJar(type : Jar, dependsOn : [copyJars, copyConfigs, jar]) {
     manifest {
         attributes (
-        	'Main-Class':'main.java.hello.Application',
+        	//'Main-Class':'main.java.hello.Application',
+        	'Main-Class':'main.java.helloworld.MainEnter',
         	'Class-Path':configurations.compile.collect{'lib/'+it.getName()}.join(' ')
         )
     }
     into(''){
+    	//将下述路径下的内容复制到jar包内
     	from "$buildDir/classes/main"
     }
-    into(''){
+    into('main/resources'){
     	from "$projectDir/src/main/resources"
     }
 }
