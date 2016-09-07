@@ -17,13 +17,17 @@ public class MainEnter {
 		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("main/java/testframework/applicationContext.xml");
 
-		
+		//工厂方法
 		ClientService clientService = context.getBean("clientService", ClientService.class);
 		log.info(clientService.getMsg());
 		
+		//方法注入
 		CommandManager commandManager = (CommandManager) context.getBean("commandManager");
 		String s = (String)commandManager.process("Method Injection.!!");
 		log.info(s);
+		
+		
+		
 	}
 
 }

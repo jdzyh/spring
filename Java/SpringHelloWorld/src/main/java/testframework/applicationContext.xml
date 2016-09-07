@@ -5,6 +5,7 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	
+	<!-- SERVIECE_LOCATOR_BEANS::工厂方法 -->
 	<!-- the factory bean, which contains a method createClientServiceInstance-->
 	<bean id="serviceLocator" class="main.java.testframework.serviceLocatorBeans.DefaultServiceLocator">
 		<constructor-arg ref="defaultClientService"/>
@@ -19,6 +20,7 @@
 		<constructor-arg index="1" type="int" value="999"/>
 	</bean>
 	
+	<!-- METHOD_INJECTION::方法注入 -->
 	<bean id="command" class="main.java.testframework.methodInjectionBeans.Command" scope="prototype"/>
 	<bean id="commandManager" class="main.java.testframework.methodInjectionBeans.CommandManager">
 		<lookup-method name="createCommand" bean="command"/>
