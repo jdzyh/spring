@@ -1,6 +1,6 @@
 package main.java.soundsystem.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,11 +9,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import main.java.soundsystem.CDPlayer;
-import main.java.soundsystem.CDPlayerConfig;
 import main.java.soundsystem.CompactDisc;
+import main.java.soundsystem.config.BeanConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=CDPlayerConfig.class)
+@ContextConfiguration(classes=BeanConfig.class)
 public class CDPlayerTest {
 	
 	@Autowired

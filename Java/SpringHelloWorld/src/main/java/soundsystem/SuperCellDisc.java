@@ -1,5 +1,6 @@
 package main.java.soundsystem;
 
+//@Component
 public class SuperCellDisc implements CompactDisc {
 	private String title = "Supercell's New Music Disc";
 	private String artist = "ryo";

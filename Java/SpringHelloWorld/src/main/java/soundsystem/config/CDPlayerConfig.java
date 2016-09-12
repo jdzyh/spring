@@ -1,11 +1,14 @@
-package main.java.soundsystem;
+package main.java.soundsystem.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import main.java.soundsystem.CDPlayer;
+import main.java.soundsystem.CompactDisc;
+import main.java.soundsystem.SuperCellDisc;
+
 @Configuration
-@ComponentScan(basePackages="main.java.soundsystem")
+//@ComponentScan(basePackages="main.java.soundsystem")
 public class CDPlayerConfig {
 
 	@Bean
