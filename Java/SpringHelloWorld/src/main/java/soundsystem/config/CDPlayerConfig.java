@@ -1,19 +1,30 @@
 package main.java.soundsystem.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 
 import main.java.soundsystem.CDPlayer;
 import main.java.soundsystem.CompactDisc;
 import main.java.soundsystem.SuperCellDisc;
 
 @Configuration
+@PropertySource("classpath:/main/java/soundsystem/config/env.property")//…Í√˜ Ù–‘‘¥
 //@ComponentScan(basePackages="main.java.soundsystem")
 public class CDPlayerConfig {
-
+	@Autowired
+	Environment env;
+	
 	@Bean
 	public CompactDisc superCellDisc(){
-		return new SuperCellDisc();
+		SuperCellDisc scd = new SuperCellDisc(
+					env.getProperty("disc.title", "Default Title Value."),
+					env.getProperty("disc.artist", "Default Artist Value.")
+				);
+		scd.setRoll( env.getProperty("disc.roll",Integer.class, 10) );
+		return scd;
 	}
 	
 	@Bean

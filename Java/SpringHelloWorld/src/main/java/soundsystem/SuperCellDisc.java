@@ -2,13 +2,25 @@ package main.java.soundsystem;
 
 //@Component
 public class SuperCellDisc implements CompactDisc {
-	private String title = "Supercell's New Music Disc";
-	private String artist = "ryo";
+	private String title;
+	private String artist;
+	private int roll;
 	
+	public SuperCellDisc(String title, String artist) {
+		this.title = title;
+		this.artist = artist;
+	}
+	
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+
+
+
 	@Override
 	public void play() {
 		// TODO Auto-generated method stub
-		System.out.println("Playing "+title+" by "+artist);
+		System.out.println("Playing "+title+" by "+artist+", roll="+roll);
 	}
 
 }
