@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import main.java.concert.bean.Audience;
+import main.java.concert.bean.CountPerform;
 import main.java.concert.bean.Drama;
 import main.java.concert.bean.Musical;
 
@@ -30,5 +31,10 @@ public class JavaConfig {
 	@Qualifier("drama")
 	public Drama drama(){
 		return new Drama();
+	}
+	
+	@Bean
+	public CountPerform countPerform(){
+		return new CountPerform();
 	}
 }

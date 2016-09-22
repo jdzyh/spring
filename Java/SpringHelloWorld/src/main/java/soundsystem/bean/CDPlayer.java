@@ -1,4 +1,6 @@
-package main.java.soundsystem;
+package main.java.soundsystem.bean;
+
+import main.java.soundsystem.interfaces.CompactDisc;
 
 //@Component
 public class CDPlayer {

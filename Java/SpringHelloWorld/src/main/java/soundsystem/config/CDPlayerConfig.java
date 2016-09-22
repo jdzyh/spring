@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
-import main.java.soundsystem.CDPlayer;
-import main.java.soundsystem.CompactDisc;
-import main.java.soundsystem.SuperCellDisc;
+import main.java.soundsystem.bean.CDPlayer;
+import main.java.soundsystem.bean.SuperCellDisc;
+import main.java.soundsystem.interfaces.CompactDisc;
 
 @Configuration
 @PropertySource("classpath:/main/java/soundsystem/config/env.property")//…Í√˜ Ù–‘‘¥

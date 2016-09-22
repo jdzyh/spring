@@ -1,4 +1,4 @@
-package main.java.soundsystem;
+package main.java.soundsystem.interfaces;
 
 public interface CompactDisc {
 	public void play();
