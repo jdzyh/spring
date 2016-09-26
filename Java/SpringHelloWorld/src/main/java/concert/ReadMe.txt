@@ -2,6 +2,8 @@
 main/java/concert/ReadMe.txt
 
 #EXTRA-IMPORT:
+spring-aop
+spring-aspects
 aspectjrt.jar
 aspectjweaver.jar
 
