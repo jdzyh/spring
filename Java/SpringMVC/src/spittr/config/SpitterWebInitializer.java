@@ -8,14 +8,14 @@ public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherSer
 		return new String[]{"/"};
 	}
 	
-	//代替传统的web.xml配置
+	//浠ｆ浛浼犵粺鐨剋eb.xml閰嶇疆
 	@Override
-	protected Class<?>[] getServletConfigClasses() { //程序启动时加载包含web组件bean的上下文
+	protected Class<?>[] getServletConfigClasses() { //绋嬪簭鍚姩鏃跺姞杞藉寘鍚玾eb缁勪欢bean鐨勪笂涓嬫枃
 		return new Class<?>[]{ WebConfig.class };
 	}
 	
 	@Override
-	protected Class<?>[] getRootConfigClasses() { //加载其他bean的上下文，包含中间层、数据层
+	protected Class<?>[] getRootConfigClasses() { //鍔犺浇鍏朵粬bean鐨勪笂涓嬫枃锛屽寘鍚腑闂村眰銆佹暟鎹眰
 		return new Class<?>[]{ RootConfig.class };
 	}
 	
