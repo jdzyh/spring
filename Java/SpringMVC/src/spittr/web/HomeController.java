@@ -1,6 +1,5 @@
 package spittr.web;
 
-//import static org.springframework.web.bind.annotation.RequestMethod.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +14,7 @@ public class HomeController {
 	/**
 	 * value:指定该方法所要处理的请求路径
 	 * method:指定该方法所处理的HTTP方法
-	 * @return
+	 * home视图
 	 */
 	@RequestMapping(method=RequestMethod.GET)
 	public String home(){

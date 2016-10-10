@@ -2,7 +2,7 @@ package spittr.data;
 
 import java.util.List;
 
-import spittr.Spittle;
+import spittr.bean.Spittle;
 
 public interface SpittleRepository {
 	/**
