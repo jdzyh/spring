@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import spittr.data.SpittleRepository;
 
 @Controller
-@RequestMapping({"/spittles"})
+@RequestMapping("/spittles")
 public class SpittleController {
 	
 	private SpittleRepository spittleRepository;
@@ -21,8 +21,8 @@ public class SpittleController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String spittles(Model model){
-		model.addAttribute(spittleRepository.findSpittles(Long.MAX_VALUE, 20));//将spittle添加到模型中
+		model.addAttribute("spittleList", spittleRepository.findSpittles(Long.MAX_VALUE, 20) );//将spittle添加到模型中
 		
-		return "spittle";//返回视图名称
+		return "spittles";//返回视图名称
 	}
 }

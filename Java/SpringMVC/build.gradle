@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	//http://mockito.org/
+    compile 'org.mockito:mockito-core:2.1.0'
+	//bytebuddy.net
+	compile 'net.bytebuddy:byte-buddy:1.4.31'
+}
+
+task download(type:Copy){
+	from configurations.runtime
+	into 'lib'
+}
