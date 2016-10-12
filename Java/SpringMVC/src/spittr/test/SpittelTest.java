@@ -24,11 +24,28 @@ import spittr.web.SpittleController;
 public class SpittelTest {
 
 	@Test
+	public void shouldShowPagedSpittles() throws Exception{
+		List<Spittle> expectedSpittles = createSpittleList(50);
+
+		SpittleRepository mockRepository = mock(SpittleRepository.class);
+		when(mockRepository.findSpittles(23890, 50)).thenReturn(expectedSpittles);
+		
+		SpittleController controller = new SpittleController(mockRepository);
+		MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller)
+				.setSingleView( new InternalResourceView("/WEB-INF/views/spittles.jsp") ) //:mock框架不解析控制器中的视图名
+				.build();
+		
+		mockMvc.perform( MockMvcRequestBuilders.get("/spittles?max=23890&count=50") )
+				.andExpect(view().name("spittles"))
+				.andExpect(model().attributeExists("spittleList"))
+				.andExpect(model().attribute("spittleList", hasItems( expectedSpittles.toArray() )) );
+		 
+	}
+	
+	@Test
 	public void shouldShowRecentSpittles() throws Exception{
 		List<Spittle> expectedSpittles = createSpittleList(20);
-		
-		List mockedList = mock(List.class);
-		
+
 		SpittleRepository mockRepository = mock(SpittleRepository.class);
 		when(mockRepository.findSpittles(Long.MAX_VALUE, 20)).thenReturn(expectedSpittles);
 		

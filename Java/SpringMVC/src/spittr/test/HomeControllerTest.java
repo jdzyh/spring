@@ -23,6 +23,7 @@ public class HomeControllerTest {
 		
 		mockMvc.perform( MockMvcRequestBuilders.get("/homepage") ) //对"/"执行GET请求
 		       .andExpect( MockMvcResultMatchers.view().name("home") ); //预期得到home视图
+				
 	}
 
 }
