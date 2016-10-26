@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/WEB-INF/views/home.jsp=UTF-8
-encoding//src/WEB-INF/views/spittles.jsp=UTF-8
+encoding//WebRoot/WEB-INF/views/home.jsp=UTF-8
+encoding//WebRoot/WEB-INF/views/spittles.jsp=UTF-8
 encoding//src/spittr/web/HomeController.java=UTF-8
 encoding/<project>=UTF-8
