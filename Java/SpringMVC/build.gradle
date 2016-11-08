@@ -9,6 +9,9 @@ dependencies {
     compile 'org.mockito:mockito-core:2.1.0'
 	//bytebuddy.net
 	compile 'net.bytebuddy:byte-buddy:1.4.31'
+	
+	compile 'jstl:jstl:1.2'
+	compile 'taglibs:standard:1.1.2'
 }
 
 task download(type:Copy){
