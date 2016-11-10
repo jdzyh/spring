@@ -24,8 +24,17 @@ public class SpittleRepositoryImp implements SpittleRepository {
 				break;
 			}
 		}
-		
 		return retList;
 	}
+
+	@Override
+	public Spittle findOne(long id) {
+		for(Spittle spittle : spittles){
+			if(spittle.getId().equals(id)) return spittle;
+		}
+		return null;
+	}
+	
+	
 
 }

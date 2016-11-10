@@ -20,11 +20,12 @@ public class RootConfig {
 	@Bean
 	public SpittleRepositoryImp spittleRepositoryImp(){
 		List<Spittle> retList = new ArrayList<Spittle>();
-		for(int i=0;i<10; i++){
+		for(int i=0;i<50; i++){
 			Spittle spittle = new Spittle("message", new Date(), 1000.0, 1000.0);
 			retList.add(spittle);
 		}
-		
 		return new SpittleRepositoryImp(retList);
 	}
+	
+	
 }

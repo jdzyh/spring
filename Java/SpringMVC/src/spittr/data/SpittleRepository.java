@@ -12,4 +12,11 @@ public interface SpittleRepository {
 	 * @return
 	 */
 	List<Spittle> findSpittles(long max, int count);
+	
+	/**
+	 * 返回编号为id的记录
+	 * @param id
+	 * @return
+	 */
+	Spittle findOne(long id);
 }
