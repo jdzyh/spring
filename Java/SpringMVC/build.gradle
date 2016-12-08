@@ -5,13 +5,25 @@ repositories {
 }
 
 dependencies {
+	//mockito单元测试框架
 	//http://mockito.org/
     compile 'org.mockito:mockito-core:2.1.0'
 	//bytebuddy.net
 	compile 'net.bytebuddy:byte-buddy:1.4.31'
 	
+	//JSP中s:域的使用
 	compile 'jstl:jstl:1.2'
 	compile 'taglibs:standard:1.1.2'
+
+	//apache commons dbcp数据库连接池
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
+	compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.1.1'
+	
+	//MYSQL连接驱动类
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.40'
+	
+	
 }
 
 task download(type:Copy){
