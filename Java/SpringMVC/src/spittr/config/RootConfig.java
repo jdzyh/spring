@@ -18,20 +18,36 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import spittr.dao.JdbcSpitterRepository;
+
 @Configuration
 @ComponentScan(basePackages={"spittr"}, excludeFilters = {@Filter(type=FilterType.ANNOTATION, value=EnableWebMvc.class)})
 @PropertySource("classpath:/spittr/config/env.property")
-@ActiveProfiles("development")
+@ActiveProfiles("EMBEDED")
 public class RootConfig {
 	@Autowired
 	Environment env;
 
 	@Bean
+	public JdbcSpitterRepository spitterRepository(JdbcTemplate jdbcTemplete){
+		return new JdbcSpitterRepository(jdbcTemplete);
+	}
+	
+	/**
+	 * JdbcTemplate 是 Spring 的 JDBC模板
+	 * @param dataSource:数据源
+	 * @return
+	 */
+	@Bean
 	public JdbcTemplate jdbcTemplete(DataSource dataSource){
 		return new JdbcTemplate(dataSource);
 	}
 	
-	@Profile("development")
+	/**
+	 * 使用嵌入式数据源
+	 * @return
+	 */
+	@Profile("EMBEDED")
 	@Bean
 	public DataSource embededDataSource() {
 		return new EmbeddedDatabaseBuilder()
@@ -41,7 +57,11 @@ public class RootConfig {
 				.build();
 	}
 	
-	@Profile("test")
+	/**
+	 * 使用DBCP数据库连接池
+	 * @return
+	 */
+	@Profile("DISTINCT")
 	@Bean
 	public DataSource dataSource_run() {
 		BasicDataSource ds = new BasicDataSource();

@@ -12,10 +12,21 @@ import org.springframework.stereotype.Component;
 public class ScheduledTasks {
 	private static final Log log = LogFactory.getLog(ScheduledTasks.class);
 	
-	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 	
-	@Scheduled(fixedRate=100)
+	@Scheduled(fixedRate=1000)
 	public void reportCurrentTime(){
 		log.info("The time is now "+dateFormat.format(new Date()));
+	}
+	
+	@Scheduled(fixedRate=500)
+	public void reportXXX(){
+		log.info("XXXXX");
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
