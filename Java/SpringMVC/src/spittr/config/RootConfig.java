@@ -9,6 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.ActiveProfiles;
@@ -34,14 +36,24 @@ public class RootConfig {
 	}
 	
 	/**
-	 * JdbcTemplate 是 Spring 的 JDBC模板
-	 * @param dataSource:数据源
+	 * 可以绑定参数的模板
+	 * @param dataSource
 	 * @return
 	 */
 	@Bean
-	public JdbcTemplate jdbcTemplete(DataSource dataSource){
-		return new JdbcTemplate(dataSource);
+	public NamedParameterJdbcTemplate jdbcTemplete(DataSource dataSource){
+		return new NamedParameterJdbcTemplate(dataSource);
 	}
+	
+//	/**
+//	 * JdbcTemplate 是 Spring 的 JDBC模板
+//	 * @param dataSource:数据源
+//	 * @return
+//	 */
+//	@Bean
+//	public JdbcTemplate jdbcTemplete(DataSource dataSource){
+//		return new JdbcTemplate(dataSource);
+//	}
 	
 	/**
 	 * 使用嵌入式数据源
