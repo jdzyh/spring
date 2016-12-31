@@ -9,19 +9,19 @@ import spittr.bean.Spitter;
 import spittr.data.SpitterRepository;
 
 public class JdbcSpitterRepository implements SpitterRepository {
-	private static final String SQL_SELECT = "select * from ? where id=?";
-	private static final String INSERT_SELECT = "insert into test(id, name) values(:id, :name)";
+	private static final String SQL_SELECT = "select * from sec_user";
+	private static final String INSERT_SELECT = "insert into sec_user(username, password) values(:username, :password)";
 	
 	private JdbcOperations jdbcOperations;
 	
 	public JdbcSpitterRepository(JdbcOperations jdbcOperations){
-		jdbcOperations = this.jdbcOperations;
+		this.jdbcOperations = jdbcOperations;
 	}
 	
-	public void addObject(String id, String name){
+	public void addObject(String username, String password){
 		Map<String, String> paramMap = new HashMap<String, String>();
-		paramMap.put("id", id);
-		paramMap.put("name", name);
+		paramMap.put("username", username);
+		paramMap.put("password", password);
 		jdbcOperations.update(INSERT_SELECT, paramMap);
 	}
 	
