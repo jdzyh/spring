@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import spittr.config.DaoConfig;
 import spittr.dao.JdbcSpitterRepository;
-import spittr.data.SpitterRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=DaoConfig.class)
